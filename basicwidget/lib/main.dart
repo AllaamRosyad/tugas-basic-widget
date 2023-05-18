@@ -1,17 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icon.dart';
+import 'package:line_icons/line_icons.dart';
+
+const snackBar = SnackBar(
+  content: Text('Yay! A SnackBar!'),
+);
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: Scaffold(
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text("Halo"),
-            Text("Halo 2"),
-            Row(
-              children: [Text("Halo 3")],
-            )
-          ],
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(Icons.done),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              const TextField(
+                decoration: InputDecoration(labelText: "Username"),
+              ),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(labelText: "Password"),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Icon(LineIcons.desktop),
+              ElevatedButton(onPressed: () {}, child: const Text("Login"))
+            ],
+          ),
         ),
         appBar: AppBar(
           title: const Text("Aplikasi Widget"),
